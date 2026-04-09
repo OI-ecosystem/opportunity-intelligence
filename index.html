@@ -3,293 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Opportunity Intelligence Ecosystem</title>
+<title>Opportunity Intelligence</title>
 <style>
-  body {
-    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 48px 40px;
-    background: #FFFFFF;
-    color: #1A1A18;
-    line-height: 1.7;
-    font-size: 16px;
-  }
-
-  h1 {
-    font-size: 40px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 8px;
-    margin-top: 0;
-    color: #1A1A18;
-  }
-
-  h2 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-top: 48px;
-    margin-bottom: 8px;
-    color: #1A1A18;
-  }
-
-  h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: 32px;
-    margin-bottom: 6px;
-    color: #1A1A18;
-  }
-
-  p {
-    color: #555550;
-    margin-bottom: 12px;
-    margin-top: 0;
-  }
-
-  .tagline {
-    font-size: 18px;
-    color: #888884;
-    font-style: italic;
-    margin-bottom: 6px;
-  }
-
-  .origin-line {
-    font-size: 15px;
-    color: #888884;
-    margin-bottom: 40px;
-  }
-
-  hr {
-    border: none;
-    border-top: 1px solid #E8E8E4;
-    margin: 40px 0;
-  }
-
-  ul {
-    color: #555550;
-    padding-left: 24px;
-    margin: 8px 0 16px;
-  }
-
-  ul li {
-    margin-bottom: 6px;
-  }
-
-  .cta {
-    display: inline-block;
-    margin-top: 12px;
-    margin-bottom: 4px;
-    font-weight: 600;
-    font-size: 15px;
-    color: #1A1A18;
-    text-decoration: none;
-    border-bottom: 2px solid #1A1A18;
-    padding-bottom: 2px;
-  }
-
-  .cta:hover { opacity: 0.7; }
-
-  .section-number {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #AAAAAA;
-    margin-bottom: 4px;
-    margin-top: 40px;
-  }
-
-  .callout {
-    background: #F7F7F4;
-    border-left: 3px solid #1A1A18;
-    padding: 16px 20px;
-    margin: 24px 0;
-    border-radius: 0 6px 6px 0;
-  }
-
-  .callout p {
-    margin: 0;
-    color: #1A1A18;
-    font-style: italic;
-    font-size: 15px;
-  }
-
-  .flow {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: #1A1A18;
-    text-align: center;
-    padding: 24px;
-    background: #F7F7F4;
-    border-radius: 8px;
-    margin: 24px 0;
-  }
-
-  .label {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #AAAAAA;
-    margin-bottom: 6px;
-  }
-
-  .quote {
-    font-size: 17px;
-    font-style: italic;
-    color: #1A1A18;
-    text-align: center;
-    padding: 32px 48px;
-    border-top: 1px solid #E8E8E4;
-    border-bottom: 1px solid #E8E8E4;
-    margin: 40px 0;
-  }
-
-  .belt-strip {
-    display: flex;
-    height: 4px;
-    border-radius: 2px;
-    overflow: hidden;
-    margin-bottom: 40px;
-  }
-  .belt-strip span { flex: 1; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system,'Helvetica Neue',Arial,sans-serif; background:#fff; color:#1A1A18; line-height:1.7; font-size:16px; -webkit-font-smoothing:antialiased; }
+  .page { max-width:860px; margin:0 auto; padding:0 40px 80px; }
+  @media(max-width:600px){ .page{padding:0 22px 60px;} }
+  .belt-strip { display:flex; height:5px; width:100%; }
+  .belt-strip span { flex:1; }
+  .page-header { padding:52px 0 40px; border-bottom:1px solid #E8E8E4; margin-bottom:48px; }
+  .page-header h1 { font-size:42px; font-weight:700; letter-spacing:-.02em; margin-bottom:10px; line-height:1.15; }
+  .page-header .tagline { font-size:18px; font-style:italic; color:#888884; margin-bottom:6px; }
+  .page-header .origin { font-size:14px; color:#AAAAAA; }
+  .section { margin-bottom:52px; padding-bottom:52px; border-bottom:1px solid #E8E8E4; }
+  .section-label { font-size:10px; font-weight:700; letter-spacing:.20em; text-transform:uppercase; color:#AAAAAA; margin-bottom:18px; }
+  h2 { font-size:26px; font-weight:700; letter-spacing:-.01em; margin-bottom:10px; line-height:1.25; }
+  h3 { font-size:16px; font-weight:600; margin-bottom:5px; margin-top:24px; }
+  p { color:#555550; margin-bottom:14px; font-size:15.5px; line-height:1.75; }
+  ul { list-style:none; margin:10px 0 18px; padding:0; }
+  ul li { color:#555550; font-size:15.5px; padding:5px 0 5px 20px; position:relative; line-height:1.6; }
+  ul li::before { content:'·'; position:absolute; left:6px; color:#AAAAAA; font-size:18px; line-height:1.4; }
+  .cta-link { display:inline-block; margin-top:16px; font-size:14px; font-weight:600; letter-spacing:.04em; color:#1A1A18; text-decoration:none; border-bottom:2px solid #1A1A18; padding-bottom:2px; transition:opacity .2s; }
+  .cta-link:hover { opacity:.5; }
+  .flow-bar { background:#F7F7F4; border-radius:8px; padding:20px 28px; text-align:center; font-size:16px; font-weight:600; color:#1A1A18; margin:20px 0; letter-spacing:.01em; }
+  .book-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:20px 0; }
+  @media(max-width:560px){ .book-grid{grid-template-columns:1fr;} }
+  .book-card { background:#F7F7F4; border:1px solid #E8E8E4; border-radius:7px; padding:16px 18px; }
+  .book-vol { font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:#AAAAAA; margin-bottom:4px; }
+  .book-title { font-size:14px; font-weight:600; color:#1A1A18; margin-bottom:4px; }
+  .book-card p { font-size:13px; color:#555550; margin:0; line-height:1.6; }
+  .engine-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:20px 0; }
+  @media(max-width:560px){ .engine-grid{grid-template-columns:1fr;} }
+  .engine-card { background:#F7F7F4; border:1px solid #E8E8E4; border-radius:7px; padding:16px 18px; }
+  .engine-price { font-size:18px; font-weight:700; color:#1A1A18; margin-bottom:2px; }
+  .engine-name { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#888884; margin-bottom:8px; }
+  .engine-card p { font-size:13px; color:#555550; margin:0; line-height:1.6; }
+  .callout { border-left:3px solid #1A1A18; background:#F7F7F4; padding:18px 22px; border-radius:0 8px 8px 0; margin:24px 0; }
+  .callout p { margin:0; font-style:italic; color:#1A1A18; font-size:15px; }
+  .quote { text-align:center; font-style:italic; font-size:18px; color:#1A1A18; padding:36px 40px; border-top:1px solid #E8E8E4; border-bottom:1px solid #E8E8E4; margin:48px 0 40px; line-height:1.85; }
+  .page-footer { margin-top:48px; padding-top:28px; border-top:1px solid #E8E8E4; text-align:center; }
+  .page-footer p { font-size:11px; color:#AAAAAA; letter-spacing:.10em; text-transform:uppercase; margin-bottom:18px; }
 </style>
 </head>
 <body>
 
-<!-- Belt strip -->
 <div class="belt-strip">
-  <span style="background:#DCDCDC"></span>
-  <span style="background:#EFC84A"></span>
-  <span style="background:#E07E2A"></span>
-  <span style="background:#5FA348"></span>
-  <span style="background:#3E76BB"></span>
-  <span style="background:#7A5230"></span>
+  <span style="background:#DCDCDC"></span><span style="background:#EFC84A"></span>
+  <span style="background:#E07E2A"></span><span style="background:#5FA348"></span>
+  <span style="background:#3E76BB"></span><span style="background:#7A5230"></span>
   <span style="background:#252525"></span>
 </div>
 
-<h1>The Opportunity Intelligence Ecosystem</h1>
-<p class="tagline">A unified system for thinking, decision-making, and execution.</p>
-<p class="origin-line">Built from real-world strategic environments. Adapted into a complete thinking system.</p>
+<div class="page">
 
-<hr>
+  <div class="page-header">
+    <h1>Opportunity Intelligence</h1>
+    <p class="tagline">A structured thinking framework for operators and founders.</p>
+    <p class="origin">Written from inside a real Tier-1 strategic process — documenting the thinking that emerged while operating at institutional level.</p>
+  </div>
 
-<p class="label">Start Here</p>
+  <!-- WHAT IT IS -->
+  <div class="section">
+    <div class="section-label">What It Is</div>
+    <h2>Books and decision engines. One framework.</h2>
+    <p>Opportunity Intelligence is a complete thinking framework — expressed as a ten-volume book series and four decision engines.</p>
+    <p>The books document the framework. The engines put it into practice.</p>
+    <p>Together they form a structured system for capturing signal, recognising pattern, making clear decisions, and executing with strategy.</p>
+    <div class="flow-bar">Signal &nbsp;→&nbsp; Pattern &nbsp;→&nbsp; Decision &nbsp;→&nbsp; Strategy &nbsp;→&nbsp; Silence</div>
+  </div>
 
-<hr>
+  <!-- THE BOOKS -->
+  <div class="section">
+    <div class="section-label">The OI Series — Ten Volumes</div>
+    <h2>The complete thinking framework. In print.</h2>
+    <p>Ten books. Each one documents a distinct layer of the Opportunity Intelligence framework — from signal recognition through to strategic silence.</p>
+    <p>All £9.99. Available on Amazon KDP.</p>
+    <div class="book-grid">
+      <div class="book-card"><div class="book-vol">V1</div><div class="book-title">AI — Been There Done That</div></div>
+      <div class="book-card"><div class="book-vol">V2</div><div class="book-title">The Signal Economy</div></div>
+      <div class="book-card"><div class="book-vol">V3</div><div class="book-title">Signal Infrastructure</div></div>
+      <div class="book-card"><div class="book-vol">V4</div><div class="book-title">Pattern Thinkers</div></div>
+      <div class="book-card"><div class="book-vol">V5</div><div class="book-title">The Decision Layer</div></div>
+      <div class="book-card"><div class="book-vol">V6</div><div class="book-title">The Strategy Engine</div></div>
+      <div class="book-card"><div class="book-vol">V7</div><div class="book-title">Model Builders</div></div>
+      <div class="book-card"><div class="book-vol">V8</div><div class="book-title">Attention Discipline</div></div>
+      <div class="book-card"><div class="book-vol">V9</div><div class="book-title">The Signal Mind</div></div>
+      <div class="book-card"><div class="book-vol">V10</div><div class="book-title">Strategic Silence</div></div>
+    </div>
+    <a class="cta-link" href="https://amazon.com/author/garryshort">→ Explore the Full Series on Amazon</a>
+  </div>
 
-<!-- FOR PARENTS -->
-<h2>For Parents</h2>
-<h3>The Thinking Dojo</h3>
-<p>A structured system that teaches children how to think — supported by a guided progression engine.</p>
-<p>Not what to think — but how to process, decide, and act.</p>
-<p>Children learn to:</p>
-<ul>
-  <li>Notice what matters</li>
-  <li>Plan with intent</li>
-  <li>Act with clarity</li>
-  <li>Review and improve</li>
-</ul>
-<a class="cta" href="https://opportunity-intelligence.lemonsqueezy.com/">→ Get the Thinking Dojo System</a>
+  <!-- THE ENGINES -->
+  <div class="section">
+    <div class="section-label">The OI Engines</div>
+    <h2>The framework in practice.</h2>
+    <p>Four digital decision engines — each one implementing a specific layer of the Opportunity Intelligence framework as an interactive tool.</p>
+    <p>Built for operators who want to apply the framework directly to live decisions, not just read about it.</p>
+    <div class="engine-grid">
+      <div class="engine-card">
+        <div class="engine-price">£99</div>
+        <div class="engine-name">Signal Engine</div>
+        <p>Capture and qualify incoming signal. Filter noise. Surface what matters.</p>
+      </div>
+      <div class="engine-card">
+        <div class="engine-price">£129</div>
+        <div class="engine-name">Pattern Engine</div>
+        <p>Recognise what repeats. Understand the structure beneath the surface.</p>
+      </div>
+      <div class="engine-card">
+        <div class="engine-price">£169</div>
+        <div class="engine-name">Decision Engine</div>
+        <p>Force structured decisions. Remove ambiguity. Act with clarity.</p>
+      </div>
+      <div class="engine-card">
+        <div class="engine-price">£299</div>
+        <div class="engine-name">Strategy Engine</div>
+        <p>Hold strategic position. Prevent drift. Maintain clarity under pressure.</p>
+      </div>
+    </div>
+    <p style="font-size:13.5px;color:#888884;margin-top:4px">Full bundle: £479 — saving £217 on individual prices.</p>
+    <a class="cta-link" href="https://opportunity-intelligence.lemonsqueezy.com/">→ Access the OI Engines</a>
+  </div>
 
-<hr>
+  <!-- ORIGIN -->
+  <div class="section">
+    <div class="section-label">Origin</div>
+    <h2>Where this came from.</h2>
+    <p>Opportunity Intelligence was not developed theoretically. It emerged from inside live strategic environments — including an active Tier 1 M&amp;A process involving three patent-protected infrastructure assets.</p>
+    <p>The framework documents the thinking that developed during that process. The books and engines are the direct output of applying structured thinking under real institutional pressure.</p>
+    <ul>
+      <li>Signal matters — noise is expensive</li>
+      <li>Pattern recognition precedes every sound decision</li>
+      <li>Strategic silence is an active position, not an absence</li>
+      <li>The process that controls you controls the outcome</li>
+    </ul>
+    <div class="callout">
+      <p>Written from inside a real Tier-1 strategic process — documenting the thinking that emerged while operating at institutional level.</p>
+    </div>
+  </div>
 
-<!-- FOR OPERATORS -->
-<h2>For Operators / Founders</h2>
-<h3>Opportunity Intelligence + Operator Stack</h3>
-<p>A complete system for structured thinking and execution.</p>
-<ul>
-  <li>Opportunity Intelligence → Books + Decision Engines</li>
-  <li>Operator Stack → Notion-based execution system</li>
-</ul>
-<p>Together, they:</p>
-<ul>
-  <li>Capture signal</li>
-  <li>Define pattern</li>
-  <li>Force clear decisions</li>
-  <li>Execute with structure</li>
-</ul>
-<a class="cta" href="https://opportunity-intelligence.lemonsqueezy.com/">→ Access the Full System</a>
+  <!-- APPLIED SYSTEMS -->
+  <div class="section">
+    <div class="section-label">Applied Systems Trilogy</div>
+    <h2>The framework applied.</h2>
+    <p>Three books that apply the Opportunity Intelligence framework to specific domains — market positioning, strategic advantage, and signal trading.</p>
+    <ul>
+      <li>The Market Principle</li>
+      <li>The Positioning Advantage</li>
+      <li>The Signal Trader</li>
+    </ul>
+    <p>All £9.99 on Amazon KDP.</p>
+    <a class="cta-link" href="https://amazon.com/author/garryshort">→ View on Amazon</a>
+  </div>
 
-<hr>
+  <div class="quote">
+    "Control the process — or the process controls you."
+  </div>
 
-<!-- THE SYSTEM -->
-<h2>The System</h2>
-<p>Three connected layers.</p>
+  <div class="page-footer">
+    <p>Part of the Opportunity Intelligence Ecosystem</p>
+    <div class="belt-strip" style="border-radius:3px;overflow:hidden">
+      <span style="background:#DCDCDC"></span><span style="background:#EFC84A"></span>
+      <span style="background:#E07E2A"></span><span style="background:#5FA348"></span>
+      <span style="background:#3E76BB"></span><span style="background:#7A5230"></span>
+      <span style="background:#252525"></span>
+    </div>
+  </div>
 
-<div class="section-number">01 — The Thinking Dojo (Foundation)</div>
-<h3>The entry point.</h3>
-<p>A structured system that develops thinking through:</p>
-<ul>
-  <li>Visual learning</li>
-  <li>Guided decision-making</li>
-  <li>An interactive progression engine</li>
-</ul>
-<ul>
-  <li>Notice → identify signal</li>
-  <li>Plan → structure response</li>
-  <li>Act → execute clearly</li>
-  <li>Review → improve thinking</li>
-  <li>Progress → tracked through the Coach Engine</li>
-</ul>
-
-<div class="section-number">02 — Opportunity Intelligence (Thinking + Decision)</div>
-<h3>The strategic layer.</h3>
-<p>Derived from real-world environments where decisions carry weight.</p>
-<ul>
-  <li>Books → thinking frameworks</li>
-  <li>Engines → decision tools</li>
-</ul>
-<a class="cta" href="https://amazon.com/author/garryshort">→ Explore the Books (Full Series)</a>
-
-<div class="section-number">03 — Operator Stack (Execution)</div>
-<h3>The operational layer.</h3>
-<p>A modular Notion system used to run decisions in practice.</p>
-<p>Where thinking becomes action.</p>
-<a class="cta" href="https://opportunity-intelligence.lemonsqueezy.com/">→ Access via System Hub</a>
-
-<hr>
-
-<!-- HOW IT WORKS -->
-<h2>How It Works</h2>
-<div class="flow">Signal → Pattern → Decision → Action</div>
-
-<hr>
-
-<!-- ORIGIN -->
-<h2>Origin</h2>
-<p>This system is not theoretical.</p>
-<p>It was developed inside live strategic environments where:</p>
-<ul>
-  <li>Signal matters</li>
-  <li>Noise is costly</li>
-  <li>Decisions carry real consequence</li>
-</ul>
-<p>The Thinking Dojo represents the earliest form of that same system.</p>
-
-<hr>
-
-<!-- FROM THE ARCHITECT -->
-<h2>From the Architect</h2>
-<div class="callout">
-  <p>This system is not theoretical. It was developed inside live M&A environments where signal matters and noise is costly.</p>
 </div>
 
-<div class="quote">
-  "Control the process — or the process controls you."
-</div>
-
-<!-- Belt strip footer -->
 <div class="belt-strip">
-  <span style="background:#DCDCDC"></span>
-  <span style="background:#EFC84A"></span>
-  <span style="background:#E07E2A"></span>
-  <span style="background:#5FA348"></span>
-  <span style="background:#3E76BB"></span>
-  <span style="background:#7A5230"></span>
+  <span style="background:#DCDCDC"></span><span style="background:#EFC84A"></span>
+  <span style="background:#E07E2A"></span><span style="background:#5FA348"></span>
+  <span style="background:#3E76BB"></span><span style="background:#7A5230"></span>
   <span style="background:#252525"></span>
 </div>
 
